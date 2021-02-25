@@ -7,3 +7,5 @@ helm upgrade cinema --install  ./charts/cinema
 helm list
 kubectl get po
 kubectl apply -f website-deployment.yaml
+
+kubectl get all in the service look for(( /cinema-website             NodePort       10.97.93.5       <none>        80:30000/TCP ))
