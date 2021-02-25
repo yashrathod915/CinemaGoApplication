@@ -1,0 +1,9 @@
+minikube start
+minikube status
+kubectl cluster-info
+cat ./charts/cinema/Chart.yaml
+helm dependency update charts/cinema
+helm upgrade cinema --install  ./charts/cinema
+helm list
+kubectl get po
+kubectl apply -f website-deployment.yaml
