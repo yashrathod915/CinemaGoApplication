@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-app-deploy
+  labels:
+    name: website-app-deploy
+    app: demo-website-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: worker-app-pod
+      app: demo-website-app
+    
+  template:
+    metadata:
+      name: worker-app-pod
+      labels:
+        name: worker-app-pod
+        app: demo-website-app
+    spec:
+      containers:
+        - name: worker-app
+          image: microservices-docker-go-mongodb/website:latest
+          imagePullPolicy: IfNotPresent
+          ports:  
+             - containerPort: 8000
+
