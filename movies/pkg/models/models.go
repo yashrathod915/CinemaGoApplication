@@ -6,7 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// Movie is used to represent movie profile data
+// Movie is used to represent movie profile data 1
 type Movie struct {
 	ID        primitive.ObjectID `bson:"_id,omitempty"`
 	Title     string             `bson:"title,omitempty"`
