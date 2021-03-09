@@ -16,13 +16,14 @@ spec:
       annotations:
         prometheus.io/scrape: 'false'
     spec:
+      type : NodePort
       containers:
         - name: grafana
           image: "grafana/grafana:7.2.1"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 30100
               protocol: TCP
           env:
             - name: GF_PATHS_PROVISIONING
