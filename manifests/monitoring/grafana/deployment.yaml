@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 30100
+              containerPort: 3000
               protocol: TCP
           env:
             - name: GF_PATHS_PROVISIONING
