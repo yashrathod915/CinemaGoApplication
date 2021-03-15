@@ -9,3 +9,25 @@ kubectl get po
 kubectl apply -f website-deployment.yaml
 
 kubectl get all in the service look for(( /cinema-website             NodePort       10.97.93.5       <none>        80:30000/TCP ))
+
+
+run the grafana and application
+(go inside Cinemaapplication folder)
+minikube start
+kubectl get all
+kubectl get all -n flux-system
+ls
+helm dependency update charts/cinema
+helm upgrade cinema --install  ./charts/cinema
+kubectl apply -f website-deployment.yaml
+ls
+kubectl apply -f monitor-source.yaml
+kubectl apply -f monitor-kustomize.yaml
+ls
+cd manifests/monitoring/grafana/
+ls
+kubectl apply -f service.yaml
+cd ../../..
+ls
+kubectl get all -n flux-system
+watch 'kubectl get all -n flux-system'
