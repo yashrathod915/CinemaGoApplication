@@ -31,3 +31,8 @@ cd ../../..
 ls
 kubectl get all -n flux-system
 watch 'kubectl get all -n flux-system'
+
+
+
+(check current k8s service)
+ kubectl config get-contexts
